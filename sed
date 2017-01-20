@@ -4,7 +4,8 @@ import sys
 
 old=sys.argv[1]
 new=sys.argv[2]
-f=open('a.txt','r+')
+files=sys.argv[3]
+f=open(files,'r+')
 data = f.read()
 if old in data:
     data = data.replace(old, new)
@@ -15,6 +16,6 @@ else:
     print('The word is not in the file')
 
 f.close()
-f=open('a.txt','w')
+f=open(files,'w')
 f.write(data)
 f.close()
